@@ -1,0 +1,131 @@
+body{
+    background-color: white;
+}
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+li.nav{
+    list-style-type: none;
+    display: inline-block;
+}
+
+li#head{
+    margin-left: 0.3em;
+    color: blueviolet;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.3em;
+}
+legend{
+    font-size: 1.3em;
+    color: blanchedalmond;
+}
+
+fieldset{
+    border: 3px solid black;
+    margin: 0.2em;
+    padding: 0.4em;
+    background-color: #acd8ff;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.form > input{
+    margin: 0.5em;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    color: cornflowerblue;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.form > textarea{
+    margin: 0.5em;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    color: cornflowerblue;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    height: 100px;
+}
+
+.form > button{
+    margin: 0.5em;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    color: cornflowerblue;
+    border: none;
+    margin-top: 0.5em;
+}
+
+div.postDiv{
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+div.header{
+    display: flex;
+}
+div > h1{
+    margin-bottom: 0;
+}
+div.post{
+    padding: 1em;
+}
+div.post > p {
+    margin: 0;
+}
+
+div.postFooter {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+div.postFooter .button {
+    color: #59626B;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    padding: 0.3rem 1rem;
+    margin: 0 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#like{
+    color: #59626B;
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    padding: 0.3rem 1rem;
+    margin: 0 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.like-button {
+    font-size: 1rem;
+    padding: 5px 10px;
+    color:  #585858;
+}
+.liked {
+    font-weight: bold;
+    color: #1565c0;
+  }
+
+  div.header > div > h1{
+    color: cadetblue;
+    margin-left: 0.5em;
+  }
+
+  div.post > p{
+    color: darkgreen;
+    margin-left: 0.3em;
+  }
