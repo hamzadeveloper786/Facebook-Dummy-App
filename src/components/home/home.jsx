@@ -3,6 +3,7 @@ import './home.css'
 import { database } from './config'
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore'
 import {  HandThumbsUp, Trash, PencilSquare } from "react-bootstrap-icons";
+import Swal from 'sweetalert2';
 
 const  Home = () => {
 
@@ -38,6 +39,21 @@ const  Home = () => {
     const handleDelete =async(id)=>{
        const deleteVal =  doc(database,"dummy",id)
        await deleteDoc(deleteVal)
+       const { value: password } = await Swal.fire({
+        title: 'Enter your password',
+        input: 'password',
+        inputLabel: 'Password',
+        inputPlaceholder: 'Enter your password',
+        inputAttributes: {
+          maxlength: 10,
+          autocapitalize: 'off',
+          autocorrect: 'off'
+        }
+      })
+      
+      if (password) {
+        Swal.fire(`Entered password: ${password}`)
+      }
     }
     
     const handleEdit =async(id,title,text)=>{
@@ -54,15 +70,6 @@ const  Home = () => {
         settitle("")
         settext("")
     }
-
-    
-    const [like, setLike] = useState(100),
-    [isLike, setIsLike] = useState(false),
-  onLikeButtonClick = () => {
-    setLike(like + (isLike?-1:1));
-    setIsLike(!isLike);
-  }
-
     return(
         <div className='container'>
             <li className="nav" id="head">Facebook Dummy</li>
@@ -89,9 +96,8 @@ const  Home = () => {
         <div class="post">
         <p>{values.text}</p>
         <div className="postFooter">
-      <div id='like' className={"like-button " + (isLike ? "liked" : "")}
-        onClick={onLikeButtonClick} >
-        <HandThumbsUp /> {like}
+      <div id='like'>
+        <HandThumbsUp /> Like
       </div>
       <div className="button" onClick={()=>handleEdit(values.id,values.title,values.text)}>
         <PencilSquare /> Edit
